@@ -36,13 +36,15 @@ public class Dinamics {
         System.out.println("Курс BTC " + str.first().text());
         Dlr = str.first().text().toCharArray();
         st = "";
-        for(int i = 0; i<4; i++){
-            st +=Dlr[i];
+        for(int i = 0; i<5; i++){
+            if(Dlr[i] != '.')
+                st +=Dlr[i];
         }
         double bt = Double.valueOf(st);
         st = "";
         for(int i = 5; i<7; i++){
-            st +=Dlr[i];
+            if(Dlr[i] != '$')
+                st +=Dlr[i];
         }
         bt+=(Double.valueOf(st)/100);
         bt*=db;
@@ -52,12 +54,14 @@ public class Dinamics {
         Dlr = str.first().text().toCharArray();
         st = "";
         for(int i = 0; i<4; i++){
-            st +=Dlr[i];
+            if(Dlr[i] != '.')
+                st +=Dlr[i];
         }
         double et = Double.valueOf(st);
         st = "";
-        for(int i = 5; i<7; i++){
-            st +=Dlr[i];
+        for(int i = 5; i<8; i++){
+            if(Dlr[i] != '$')
+                st +=Dlr[i];
         }
         et+=(Double.valueOf(st)/100);
         et*=db;
@@ -67,12 +71,14 @@ public class Dinamics {
         Dlr = str.first().text().toCharArray();
         st = "";
         for(int i = 0; i<4; i++){
+            if(Dlr[i] != '.')
             st +=Dlr[i];
         }
         double lt = Double.valueOf(st);
         st = "";
-        for(int i = 5; i<7; i++){
-            st +=Dlr[i];
+        for(int i = 5; i<8; i++){
+            if(Dlr[i] != '$')
+                st +=Dlr[i];
         }
         lt+=(Double.valueOf(st)/100);
         lt*=db;
